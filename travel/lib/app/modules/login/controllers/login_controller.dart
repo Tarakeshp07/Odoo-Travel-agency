@@ -30,6 +30,7 @@ class LoginController extends GetxController {
       'Login successful',
       snackPosition: SnackPosition.BOTTOM,
     );
+    Get.toNamed('/homescreen');
   }
 
   void forgotPassword() {

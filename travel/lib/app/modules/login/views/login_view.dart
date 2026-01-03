@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:travel/app/routes/app_pages.dart';
 import 'package:travel/app/theme/appcolors.dart';
 
 import '../controllers/login_controller.dart';
@@ -31,7 +32,7 @@ class LoginView extends GetView<LoginController> {
               const SizedBox(height: 24),
               Center(
                 child: TextButton(onPressed: (){
-                  
+                  Get.toNamed(Routes.SIGNUP);
                 }, 
                 child: Text("Sign up",style:TextStyle(
                   color: Colors.black
@@ -188,39 +189,6 @@ class LoginView extends GetView<LoginController> {
         ),
         Expanded(child: Divider(color: AppColors.primary20)),
       ],
-    );
-  }
-
-  // ---------------- SOCIAL ----------------
-  Widget _socialButtons() {
-    return Row(
-      children: [
-        _socialButton('Google'),
-        const SizedBox(width: 16),
-        _socialButton('Apple'),
-      ],
-    );
-  }
-
-  Widget _socialButton(String text) {
-    return Expanded(
-      child: OutlinedButton(
-        onPressed: () {},
-        style: OutlinedButton.styleFrom(
-          padding: const EdgeInsets.symmetric(vertical: 14),
-          side: const BorderSide(color: AppColors.primary20),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(14),
-          ),
-        ),
-        child: Text(
-          text,
-          style: const TextStyle(
-            color: AppColors.textColor,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-      ),
     );
   }
 
